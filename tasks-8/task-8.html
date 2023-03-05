@@ -44,7 +44,7 @@
                 if (questionsForUser >= 1 || questionsForUser <= 10) {
                     totalSum += arr[questionsForUser - 1]
                 }
-            } while (questionsForUser <= 1 || questionsForUser >= 10);
+            } while (questionsForUser >= 1 || questionsForUser <= 10);
             let messageWin = `Вы выиграли ${totalSum}`
             let messageFail = `Вы проиграли ${totalSum}`
             return totalSum >= 0 ? messageWin : messageFail
