@@ -43,8 +43,8 @@
         //Дни когда посетителей меньше 20 человек
         let firstFunctionPoint = function (infoAboutWeek) {
             let result = [];
-            for (let i = 1; i <= infoAboutWeek.length; i++) {
-                if (infoAboutWeek[i - 1] < 20)
+            for (let i = 0; i <= infoAboutWeek.length; i++) {
+                if (infoAboutWeek[i] < 20)
                     result.push(i);
             }
             return result;
