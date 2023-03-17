@@ -54,12 +54,13 @@
             return accumulator
         }, []
         )
+        console.log(getThirdMassive);
 
         document.write(`<br>3) Список цен, больших за предыдущее значение: ${getThirdMassive.join(', ')}`)
         //4)Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального
         let newArrayMax = newArrWithRandomPrice.reduce((maxValue, item) => (maxValue > item ? maxValue : item))
         let arrayProcent = newArrWithRandomPrice.map(that => Math.round((that - 100) / newArrayMax))
-        //console.log(arrayProcent);
+        console.log(arrayProcent);
 
         //5)Підрахувати кількість змін цін
         let arrayFiveMassive = newArrWithRandomPrice.reduce((prevValue, element, index, arr) => {
