@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Task 3</title>
     <style>
+        body {
+            background-color: rgb(223, 217, 217);
+        }
+
         .container {
             position: relative;
             height: 100vh;
@@ -24,20 +28,21 @@
 </head>
 
 <body>
-    <h1>Task 3</h1>
+    <h1></h1>
 
     <p>
-        Задача 3. Відобразити падаючий сніг. Сніжинка з’являється у верхній частині екрану і з випадковою
-        швидкістю
-        рухається вниз. Як тільки сніжинка досягає нижньої частини екрану вона знову повинна з’явитись у верхній
-        частині екрану.
+
 
         <br>
     <div class="container"></div>
     <script>
+        // Задача 3. Відобразити падаючий сніг.Сніжинка з’являється у верхній частині екрану і з випадковою
+        //     швидкістю
+        // рухається вниз.Як тільки сніжинка досягає нижньої частини екрану вона знову повинна з’явитись у верхній
+        // частині екрану.
         class Snow {
             RandomPositionLeft() {
-                return Math.floor(Math.random() * 80)
+                return Math.floor(Math.random() * 100)
             }
             getSpeedRandom() {
                 return 1 + (Math.random() * 25) / 5
@@ -46,7 +51,7 @@
             render(containerSelector) {
                 this.snow = document.createElement('img')
                 this.snow.className = 'snow'
-                this.snow.src = './task3/1.png'
+                this.snow.src = './task3/snow.png'
                 this.snow.style.left = this.RandomPositionLeft() + '%'
                 this.snow.style.top = '-8%'
                 const speedSnow = this.getSpeedRandom()

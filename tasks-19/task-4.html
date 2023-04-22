@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Task 4</title>
     <style>
-        .container {
+        body {
             background-color: #000;
+        }
+
+        .container {
             position: relative;
             height: 100vh;
             width: 100vw;
@@ -53,7 +56,7 @@
                 for (let i = 0; i < this.starsNum; i++) {
                     const star = document.createElement('img')
                     star.className = 'star'
-                    star.src = './task4/1.png'
+                    star.src = './task4/stars.png'
                     star.style.width = this.minSize + 'px'
                     star.style.left = this.RandomPosition() + '%'
                     star.style.top = this.RandomPosition() + '%'
@@ -73,7 +76,7 @@
             }
         }
         window.onload = function () {
-            let start = new Stars(90, './task4/1.png', 10, 50)
+            let start = new Stars(90, './task4/stars.png', 10, 50)
             start.render('.container')
         }
     </script>

@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Task 5</title>
     <style>
+        body {
+            background-color: rgb(208, 205, 205);
+        }
+
         .container {
             position: relative;
             height: 100vh;
@@ -27,6 +31,7 @@
             position: relative;
             color: #000;
             z-index: 10;
+            font-size: 30px;
         }
     </style>
 </head>
@@ -35,7 +40,7 @@
     <h1>Task 5</h1>
     <br>
     <div class="container">
-        <div class="text">Танків знищено: <span class="counter"></span></div>
+        <div class="text">Танків знищено: <span class="counter">0</span></div>
     </div>
     <script>
         //Байрактар.З верхньої частини екрану у випадковій позиції по горизонталі з’являються танки,які їдуть вниз.При кліку на танк він вибухає і зникає з екрану
@@ -55,7 +60,7 @@
                 clearInterval(init)
                 setTimeout(() => {
                     tank.remove()
-                    document.querySelector('.counter').innerHTML = this.counter + 1
+                    document.querySelector('.counter').innerHTML = this.counter++
                 }, 900)
             }
             render(containerSelector) {
@@ -66,7 +71,7 @@
                     tank.style.left = this.getRandomPosition() + '%'
                     tank.style.top = '-8%'
                     tank.style.transform = 'rotate(180deg)'
-                    tank.style.transition = 'opacity  0.3s ease 0s'
+                    tank.style.transition = 'opacity 0.3s ease 0s'
                     document.querySelector(containerSelector).append(tank)
                     let init = setInterval(() => {
                         tank.style.top = parseFloat(tank.style.top) + 2.5 + '%'
