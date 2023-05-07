@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 8</title>
+  </head>
+  <body>
+    <h2>Taks 8</h2>
+    <p>
+      Задача 8. Дано масив студентів (піб, курс, факультет). Підрахувати кількість різних факультетів, та кількість
+      студентів кожного з курсів.
+    </p>
+    <br />
+    <script>
+      //FN - Full Name
+      let studentList = [
+        { FN: "Ivanov Ivan", course: "Курс 1", faculty: "Chemisty" },
+        { FN: "Olga Mezn", course: "Курс 2", faculty: "Physic" },
+        { FN: "Kristna Brab", course: "Курс 3", faculty: "Energy" },
+        { FN: "Andrew Smak", course: "Курс 1", faculty: "Math" },
+        { FN: "Dmitro Olhov", course: "Курс 1", faculty: "Programming" },
+        { FN: "Evgen Jmen", course: "Курс 5", faculty: "Biology" },
+        { FN: "John Reese", course: "Курс 1", faculty: "Biology" },
+        { FN: "Johnatan Snow", course: "Курс 1", faculty: "Math" },
+        { FN: "Clara Snaider", course: "Курс 3", faculty: "Programming" },
+        { FN: "Yakov Alexandr", course: "Курс 5", faculty: "Programming" },
+        { FN: "Tim Kok", course: "Курс 2", faculty: "Energy" },
+        { FN: "Steve Minecraft", course: "Курс 2", faculty: "Energy" },
+        { FN: "Govard Lovecraft", course: "Курс 3", faculty: "Programming" },
+      ];
+      let facultyCount = new Map();
+      let studentCount = new Map();
+
+      for (const student of studentList) {
+        let countFaculty = facultyCount.get(student.faculty) || 0;
+        facultyCount.set(student.faculty, countFaculty + 1);
+        let countStudent = studentCount.get(student.course) || 0;
+        studentCount.set(student.course, countStudent + 1);
+      }
+      console.log("Список факультетов:");
+      console.log(facultyCount);
+      console.log("Список курсов и количество человек на них:");
+      console.log(studentCount);
+    </script>
+  </body>
+</html>

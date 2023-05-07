@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+  </head>
+  <body>
+    <h2>Task 2</h2>
+    <p>
+      Задача 2. Замінити номер розділяючи послідовності цифр дефісом згідно з форматом 0504546626 🡪 +380-50-45-466-26
+    </p>
+    <br />
+    <script>
+      let number = "0504546626";
+      let changeCNumber = number.replace(/^(\d)(\d{2})(\d{2})(\d{3})(\d{2})$/, "+38$1-$2-$3-$4-$5");
+      console.log(changeCNumber);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+  </head>
+  <body>
+    <h2>Task 1</h2>
+    <p>
+      Задача 1. Дано масив рядкових представлень чисел (тобто масив чисел у лапках (string). З використанням перевірки
+      за допомогою регулярних виразів і груп підрахувати кількість тих, у яких перша і остання літери однакові.
+    </p>
+    <br />
+    <script>
+      const arrList = ["4682", "5481", "48564", "11", "65846", "765497"];
+      let count = arrList.filter((arr) => /(^\w).*?\1/.test(arr)).length;
+      console.log(count);
+    </script>
+  </body>
+</html>

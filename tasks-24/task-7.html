@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 7</title>
+  </head>
+  <body>
+    <h2>Taks 7</h2>
+    <p>
+      Задача 7. Дано інформацію про відвідувачів деякого сайту (для кожного відвідувача зберігається логін). Підрахувати
+      для кожного клієнта кількість відвідувань.
+    </p>
+    <br />
+    <script>
+      let list = [
+        { login: "true", timeVisit: "14:12", visiter: "Ivan" },
+        { login: "true", timeVisit: "11:20", visiter: "Petro" },
+        { login: "true", timeVisit: "13:50", visiter: "Ivan" },
+        { login: "true", timeVisit: "15:00", visiter: "Olga" },
+        { login: "true", timeVisit: "14:43", visiter: "Ivan" },
+        { login: "true", timeVisit: "14:06", visiter: "Evgen" },
+        { login: "true", timeVisit: "13:03", visiter: "Olga" },
+        { login: "true", timeVisit: "14:50", visiter: "Ivan" },
+        { login: "true", timeVisit: "16:16", visiter: "Nikalas" },
+      ];
+
+      let map = new Map();
+      for (const obj of list) {
+        let countVisiter = map.get(obj.visiter) || 0;
+        map.set(obj.visiter, countVisiter + 1);
+      }
+      console.log(`Количество посещений пользователей:`);
+      console.log(map);
+    </script>
+  </body>
+</html>

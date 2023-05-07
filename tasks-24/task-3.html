@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+  </head>
+  <body>
+    <h2>Task 2</h2>
+    <p>
+      Задача 3. Після кожного значення року після 2000 року додати «р.» «Я народився 2001, а в школі пішов 2007» 🡪 «Я
+      народився 2001р., а в школі пішов 2007р.»
+    </p>
+    <br />
+    <script>
+      let string = "Я родился в 1999, а в школу пошел в 2005";
+      string = string.replace(/(\d{4})/g, "$1p.");
+      console.log(string);
+    </script>
+  </body>
+</html>

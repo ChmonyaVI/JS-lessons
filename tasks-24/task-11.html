@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 11</title>
+  </head>
+
+  <body>
+    <h2>Task 11</h2>
+    <p>
+      Задача 11. Користувач може змінювати колір фону, що вибирає користувач з використанням input type="color".
+      Зберігати цей колір і відновлювати при наступному відкритті. Також зберігати і відображати кількість змін протягом
+      одного сеансу.
+    </p>
+    <input type="color" />
+    <br />
+    <script>
+      const input = document.querySelector("input");
+      sessionStorage.setItem("backgroundCount", 0);
+
+      const div = document.createElement("div");
+      div.classList.add("backgrond-color");
+      div.innerText = "Счетчик изменение фона:";
+      const span = document.createElement("span");
+      span.classList.add("backgrounf-counter");
+      span.innerText = sessionStorage.getItem("backgroundCount");
+      div.append(span);
+      document.body.append(div);
+
+      input.addEventListener("change", () => {
+        localStorage.setItem("bacground", input.value);
+        sessionStorage.backgroundCount++;
+        document.body.style.background = input.value;
+        span.innerText = sessionStorage.getItem("backgroundCount");
+      });
+
+      window.addEventListener("load", () => {
+        document.body.style.background = localStorage.getItem("bacground");
+      });
+    </script>
+  </body>
+</html>

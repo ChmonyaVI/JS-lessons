@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+  </head>
+  <body>
+    <h2>Task 4</h2>
+    <p>Задача 4. Вводиться велике число. Кожні 3 розряди відділяти пробілом. 7457896524 🡪 7 457 896 524</p>
+    <br />
+    <script>
+      let number = "7457896524";
+      number = number.replace(/(\d{1})(\d{3})(\d{3})(\d{3})/, "$1 $2 $3 $4");
+      document.write(`Разделенный номер ${number}`);
+    </script>
+  </body>
+</html>
