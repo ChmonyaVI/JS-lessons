@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+  </head>
+  <body>
+    <h2>Task 1</h2>
+    <p>
+      Задача 1. Дано клас PhoneNumber. Створити функцію перетворення до string, при якому на основі номера виводиться
+      оператор (050…. 🡪 MTC, 096… 🡪 Kyivstar, ….)
+    </p>
+    <br />
+    <script>
+      class PhoneNumber {
+        constructor(telephoneNumber) {
+          this.telephoneNumber = telephoneNumber;
+        }
+        [Symbol.toPrimitive](hint) {
+          switch (hint) {
+            case "string":
+              if (this.telephoneNumber.startsWith("+38050") || this.telephoneNumber("+38099"))
+                return `${this.telephoneNumber} - оператор МТС.`;
+              else if (this.telephoneNumber.startsWith("+38093") || this.telephoneNumber("+38063"))
+                return `${this.telephoneNumber} - оператор Life.`;
+              else if (this.telephoneNumber.startsWith("+38091")) return `${this.telephoneNumber} - оператор Utel.`;
+              break;
+
+            default:
+              return `${this.telephoneNumber} - неизвестный оператор или оператора не существует.`;
+          }
+        }
+      }
+      const number = new PhoneNumber(`+38050226456`);
+      alert(String(number));
+      console.log(String(number));
+    </script>
+  </body>
+</html>

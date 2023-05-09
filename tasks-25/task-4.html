@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+  </head>
+  <body>
+    <h2>Task 4</h2>
+    <p>
+      Задача 4. Використовуючи один з АРІ https://github.com/public-apis/public-apis#animals та функцію fetch
+      організувати завантаження та відображення даних
+    </p>
+    <br />
+    <script>
+      const apiEndpoints = {
+        allBreedsList: "https://dog.ceo/api/breeds/list/all",
+        getBreadLink: (breedName) => `https://dog.ceo/api/breed/${breedName}/images/random`,
+      };
+
+      async function getBreedsList() {
+        return new Promise((resolve, reject) => {
+          fetch(apiEndpoints.allBreedsList)
+            .then((res) => res.json())
+            .then((data) => resolve(Object.keys(data.message)))
+            .catch((err) => console.log(err));
+        });
+      }
+      function getRandomValueFromList(breedsList) {
+        const randomIndex = Math.floor(Math.random() * breedsList.length);
+        return breedsList[randomIndex];
+      }
+      async function getImageLink(breedName) {
+        const url = apiEndpoints.getBreadLink(breedName);
+        return new Promise((resolve, reject) => {
+          fetch(url)
+            .then((res) => res.json())
+            .then((data) => resolve(data.message))
+            .catch((err) => console.log(err));
+        });
+      }
+      function createImage(imageLink) {
+        const img = document.createElement("img");
+        img.src = imageLink;
+        document.body.append(img);
+      }
+      async function go() {
+        const breedsList = await getBreedsList();
+        const breedName = getRandomValueFromList(breedsList);
+        const imageLink = await getImageLink(breedName);
+        createImage(imageLink);
+      }
+      go();
+    </script>
+  </body>
+</html>
